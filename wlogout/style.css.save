@@ -1,0 +1,22 @@
+* { background-image: none; box-shadow: none; text-shadow: none; font-family: monospace; font-size: 14px; }
+window { background-color: rgba(22, 18, 55, 0.55); }
+button {
+  margin: 180px 6px;
+  transition: margin 0.35s ease, background-color 0.35s ease, border-radius 0.35s ease;
+},
+
+button:hover {
+    background-color: rgba(130,110,255,0.45);
+    margin: -10px;
+    transition: margin 0.15s ease-out, background-color 0.15s ease-out;
+},
+button:focus {
+  margin: 90px 0px;
+  border-radius: 48px;
+},
+#lock { background-image: image(url('/usr/share/wlogout/icons/lock.png')); }
+#reboot { background-image: image(url('/usr/share/wlogout/icons/reboot.png')); }
+#shutdown { background-image: image(url('/usr/share/wlogout/icons/shutdown.png')); }
+#logout { background-image: image(url('/usr/share/wlogout/icons/logout.png')); }
+#suspend { background-image: image(url('/usr/share/wlogout/icons/suspend.png')); }
+#hibernate { background-image: image(url('/usr/share/wlogout/icons/hibernate.png')); }

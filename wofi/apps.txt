@@ -1,0 +1,14 @@
+Firefox|firefox|firefox
+VLC|vlc|vlc
+Velune|Velune|Velune
+LibreOffice Writer|libreoffice --writer|libreoffice --writer
+LibreOffice Calc|libreoffice --calc|libreoffice --calc
+LibreOffice Impress|libreoffice --impress|libreoffice --impress
+LibreOffice Draw|libreoffice --draw|libreoffice --draw
+LibreOffice Base|libreoffice --base|libreoffice --base
+LibreOffice Math|libreoffice --math|libreoffice --math
+OBS Studio|obs|obs
+Obsidian|obsidian|obsidian
+Visual Studio Code|code|code
+Sung|/home/Moses/.local/bin/sung|multimedia-audio-player
+Telegram|Telegram|telegram
