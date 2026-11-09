@@ -6,12 +6,29 @@
 "margin-left": 10,
 "margin-right": 10,
 "spacing": 6,
-"modules-left": ["hyprland/workspaces", "custom/term", "idle_inhibitor", "custom/files", "battery", "temperature", "memory"],
+"modules-left": ["custom/term", "idle_inhibitor", "custom/files", "battery", "temperature", "memory", "custom/cava"],
 "modules-center": ["custom/notification", "clock", "custom/lock"],
-"modules-right": ["network", "pulseaudio", "pulseaudio#mic", "keyboard-state", "custom/power"],
+
+"custom/cava": {
+    "exec": "~/.config/waybar/scripts/cava.sh",
+    "format": "{}"
+},
+"modules-right": ["network", "custom/forget", "bluetooth", "custom/btforget", "pulseaudio", "keyboard-state", "custom/power"],
+"bluetooth": {
+  "format": "\uf293 {num_connections}",
+  "format-off": "\uf294",
+  "format-disabled": "\uf294",
+  "tooltip-format": "{device_alias}",
+  "on-click": "~/.config/waybar/scripts/bluetooth-menu.sh"
+},
+"custom/btforget": {
+  "format": "\uf1f8",
+  "tooltip-format": "Forget a Bluetooth device",
+  "on-click": "~/.config/waybar/scripts/bluetooth-forget.sh"
+},
 "hyprland/workplaces": {"format": "{id}", "on-click": "activate"},
 "custom/term": {"format": "\uf120", "on-click": "foot"},
-"custom/files": {"format": "\uf07b", "on-click": "thunar"},
+"custom/files": {"format": "\uf07b", "on-click": "pcmanfm"},
 "idle_inhibitor": {"format": "{icon}", "format-icons": {"activated": "\uf06e", "deactivated": "\uf070"}},
 "battery": {"bat": "BAT0", "format": "{icon} {capacity}%", "format-charging": "\uf0e7 {capacity}%", "format-icons": ["\uf244", "\uf242", "\uf241", "\uf240"]},
 "temperature": {"critical-threshold": 80, "format": "\uf2c9 {temperatureC}\u00b0c"},
@@ -19,9 +36,26 @@
 "custom/notification": {"return-type": "json", "exec": "swaync-client -swb", "on-click": "swaync-client -t -sw", "format": "{icon} {text}", "format-icons": {"notification": "\uf0f3", "none": "\uf0f3", "dnd-notification": "\uf1f6", "dnd-none": "\uf1f6"}, "escape": true},
 "clock": {"format": "{:%I:%M %p}", "tooltip-format": "{:%A, %d %B %Y}"},
 "custom/lock": {"format": "\uf023", "on-click": "hyprlock"},
+    "custom/forget": {"format": "\uf1f8", "on-click": "~/.config/waybar/wifi-forget.sh"},
 "network": {"on-click": "~/.config/waybar/wifi-menu.sh", "interval": 2, "format-wifi": "\uf1eb {bandwidthUpBytes} \u2191 {bandwidthDownBytes} \u2193", "format-disconnected": "\uf1eb off"},
-"pulseaudio": {"format": "{icon} {volume}%", "format-muted": "\uf026 mute", "format-icons": {"default": ["\uf027", "\uf028"]}, "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"},
-"pulseaudio#mic": {"format": "{format_source}", "format-source": "\uf130 {volume}%", "format-source-muted": "\uf131 mute", "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"},
 "keyboard-state": {"capslock": true, "format": "\uf11c {icon}", "format-icons": {"locked": "\uf023", "unlocked": "\uf09c"}},
-"custom/power": {"format": "\uf011", "on-click": "/home/Moses/.local/bin/powermenu"}
+"custom/power": {"format": "\uf011", "tooltip": false, "on-click": "wlogout -b 6 -c 0 -r 0 -L 200 -R 200 -T 200 -B 200"},
+"pulseaudio": {
+  "format": "{icon} {volume}%",
+  "format-muted": "<span color='#6c7086'>▁▂▃▄▅▆▇█</span> muted",
+  "format-icons": {
+    "default": [
+      "<span color='#ff7ac6'>▁</span>",
+      "<span color='#ff7ac6'>▁</span><span color='#e189c7'>▂</span>",
+      "<span color='#ff7ac6'>▁</span><span color='#e189c7'>▂</span><span color='#c497c9'>▃</span>",
+      "<span color='#ff7ac6'>▁</span><span color='#e189c7'>▂</span><span color='#c497c9'>▃</span><span color='#a6a6ca'>▄</span>",
+      "<span color='#ff7ac6'>▁</span><span color='#e189c7'>▂</span><span color='#c497c9'>▃</span><span color='#a6a6ca'>▄</span><span color='#88b4cc'>▅</span>",
+      "<span color='#ff7ac6'>▁</span><span color='#e189c7'>▂</span><span color='#c497c9'>▃</span><span color='#a6a6ca'>▄</span><span color='#88b4cc'>▅</span><span color='#6bc3cd'>▆</span>",
+      "<span color='#ff7ac6'>▁</span><span color='#e189c7'>▂</span><span color='#c497c9'>▃</span><span color='#a6a6ca'>▄</span><span color='#88b4cc'>▅</span><span color='#6bc3cd'>▆</span><span color='#4dd2cf'>▇</span>",
+      "<span color='#ff7ac6'>▁</span><span color='#e189c7'>▂</span><span color='#c497c9'>▃</span><span color='#a6a6ca'>▄</span><span color='#88b4cc'>▅</span><span color='#6bc3cd'>▆</span><span color='#4dd2cf'>▇</span><span color='#2fe0d0'>█</span>"
+    ]
+  },
+  "scroll-step": 5,
+  "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+}
 }

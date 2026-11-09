@@ -26,7 +26,6 @@
   "tooltip-format": "Forget a Bluetooth device",
   "on-click": "~/.config/waybar/scripts/bluetooth-forget.sh"
 },
-"hyprland/workplaces": {"format": "{id}", "on-click": "activate"},
 "custom/term": {"format": "\uf120", "on-click": "foot"},
 "custom/files": {"format": "\uf07b", "on-click": "pcmanfm"},
 "idle_inhibitor": {"format": "{icon}", "format-icons": {"activated": "\uf06e", "deactivated": "\uf070"}},
@@ -39,6 +38,7 @@
     "custom/forget": {"format": "\uf1f8", "on-click": "~/.config/waybar/wifi-forget.sh"},
 "network": {"on-click": "~/.config/waybar/wifi-menu.sh", "interval": 2, "format-wifi": "\uf1eb {bandwidthUpBytes} \u2191 {bandwidthDownBytes} \u2193", "format-disconnected": "\uf1eb off"},
 "keyboard-state": {"capslock": true, "format": "\uf11c {icon}", "format-icons": {"locked": "\uf023", "unlocked": "\uf09c"}},
+"custom/power": {"format": "\uf011", "tooltip": false, "on-click": "wlogout -b 6 -c 0 -r 0 -L 200 -R 200 -T 200 -B 200"},
 "pulseaudio": {
   "format": "{icon} {volume}%",
   "format-muted": "<span color='#6c7086'>▁▂▃▄▅▆▇█</span> muted",
