@@ -1,0 +1,26 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-right": 1056,
+  "exclusive": false,
+  "modules-left": ["custom/dot", "hyprland/workspaces", "hyprland/window"],
+  "custom/dot": {
+    "format": "●",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "active-only": true,
+    "disable-scroll": true
+  },
+  "hyprland/window": {
+    "format": "{class}",
+    "icon": true,
+    "icon-size": 16,
+    "max-length": 18,
+    "separate-outputs": true
+  }
+}

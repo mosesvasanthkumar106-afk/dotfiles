@@ -1,0 +1,50 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 13px;
+  border: none;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+.modules-left {
+  background: rgba(20, 20, 30, 0.55);
+  border-radius: 16px;
+  padding: 0 14px;
+}
+
+#custom-dot {
+  color: #a6e3a1;
+  padding-right: 8px;
+}
+
+#workspaces button {
+  color: #ffffff;
+  padding: 0 6px;
+  background: transparent;
+}
+
+#window {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+window#waybar,
+window#waybar.background,
+window#waybar > box {
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+window#waybar,
+window#waybar.background,
+window#waybar > box {
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
