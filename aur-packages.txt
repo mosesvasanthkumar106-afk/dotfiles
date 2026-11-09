@@ -1,0 +1,12 @@
+claude-desktop-hardened-bin
+mpvpaper
+mpvpaper-debug
+tty-clock
+tty-clock-debug
+veluna
+veluna-debug
+visual-studio-code-bin
+wlogout
+wlogout-debug
+yay
+yay-debug
